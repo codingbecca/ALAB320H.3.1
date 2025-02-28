@@ -1,3 +1,5 @@
+import styles from "./Score.module.css"
+
 export default function Score ({ date, score}) {
     const parsedDate = new Date(date);
 
@@ -13,9 +15,9 @@ export default function Score ({ date, score}) {
       }).format(parsedDate);
     
     return (
-        <div>
+        <div className={styles.scoreContainer}>
             <time dateTime={formattedISO}>{formattedShort}</time>
-            <p>Score: {score}%</p>
+            <p className={styles.score}>Score: {score}%</p>
         </div>
     )
 }

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 import data from './data/learners'
-import './App.css'
+import styles from './App.module.css'
 import Learner from './components/Learner'
 
 function App() {
@@ -10,11 +10,11 @@ function App() {
   })
 
   return (
-    <>
+    <div className={styles.learnersContainer}>
       {learnersData.learners.map((learner, i) => (
         <Learner key={i} {...learner}/>
       ))}
-    </>
+    </div>
   )
 }
 
