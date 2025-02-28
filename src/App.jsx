@@ -1,13 +1,19 @@
 import { useState } from 'react'
 
+import data from './data/learners'
 import './App.css'
+import Learner from './components/Learner'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [learnersData, setLearnersData] = useState({
+    learners: data
+  })
 
   return (
     <>
-      
+      {learnersData.learners.map((learner, i) => (
+        <Learner key={i} {...learner}/>
+      ))}
     </>
   )
 }
